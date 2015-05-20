@@ -1,7 +1,7 @@
 Type=OleDll
-Reference=*\G{00020430-0000-0000-C000-000000000046}#2.0#0#C:\Windows\system32\stdole2.tlb#OLE Automation
-Reference=*\G{00025E01-0000-0000-C000-000000000046}#5.0#0#C:\Program Files\Common Files\Microsoft Shared\DAO\Dao360.dll#Microsoft DAO 3.6 Object Library
-Reference=*\G{2401DE61-8C11-46DE-A60B-79F783BA7FBA}#7.2#0#C:\Program Files\Integral Solutions Int'l\.NET\Quasi97.tlb#Quasi97 Main Library
+Reference=*\G{00020430-0000-0000-C000-000000000046}#2.0#0#..\..\..\Windows\system32\stdole2.tlb#OLE Automation
+Reference=*\G{00025E01-0000-0000-C000-000000000046}#5.0#0#..\..\..\Program Files\Common Files\Microsoft Shared\DAO\Dao360.dll#Microsoft DAO 3.6 Object Library
+Reference=*\G{2401DE61-8C11-46DE-A60B-79F783BA7FBA}#7.2#0#..\..\..\PROGRA~1\INTEGR~1\NET~1\Quasi97.tlb#Quasi97 Main Library
 Object={831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0; MSCOMCTL.OCX
 Module=modMain; modMain.bas
 Class=clsQuasiEvents; clsQuasiEvents.cls

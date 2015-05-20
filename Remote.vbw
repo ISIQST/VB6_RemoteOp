@@ -1,5 +1,5 @@
 modMain = -9, 90, 826, 640, 
-clsQuasiEvents = 158, 145, 836, 695, Z
+clsQuasiEvents = 158, 145, 836, 695, 
 frmSimple = 8, 45, 910, 701, , 66, 66, 778, 588, C
 clsLotInfo = 110, 110, 830, 632, 
 clsHOption = 132, 132, 777, 719, 

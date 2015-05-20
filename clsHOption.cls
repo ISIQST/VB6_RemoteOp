@@ -25,6 +25,10 @@ Private Enum eEventInt
    eSetupOpenClose = &H10
 End Enum
  
+Public Property Set NetHostCallBack(ByRef obj As Object)
+   Set gNetHostCallBack = obj
+End Property
+
 Public Sub Initialize3(currentApp As String, ByRef qs As Object)      'pointer to valid instance Quasi97.application
    Dim PartID%
    Dim Grade$
@@ -44,7 +48,7 @@ Public Sub Initialize3(currentApp As String, ByRef qs As Object)      'pointer t
    'The Quasi.ini file can be modified using a text editor
    '"1" = Remote mode, "0" = regular mode
    'Remote=n is also available as a command line item for the quasi software, n = 1 or 0
-   objFrmSimple.Show
+   Call gShowForm(objFrmSimple)
    'SetWindowPos frmSimple.hwnd, WindowPos.vbTopMost, 0, 0, 0, 0, SWP_NOMOVE Or SWP_NOSIZE Or SWP_SHOWWINDOW
    'create an instance of the application object to start the quasi software
    Set qst = qs
@@ -76,7 +80,7 @@ End Sub
 Public Sub Terminate()
    Set Notifier = New Collection
    Unload objFrmSimple
-   
+   Set gNetHostCallBack = Nothing
    Set BarDriver = Nothing
    Set qst = Nothing
 End Sub
@@ -116,7 +120,7 @@ Public Function SetChannels(ByRef Channels%())
 ''   curHDW.AssignedChannel = mvarChannels(0) Mod 2
 End Function
 
-Public Sub GetNewProperties(ByRef colobjects As Collection, propDetails() As String)
+Public Sub GetNewProperties(ByRef colobjects As Object, propDetails() As String)
 'propdetails has 1+colobjects.count number of rows and 4 columns.
    'Call AddCustomProperty("AC Gain (dB)", "ACGaindB", False, Round(MinACGaindB, 1) & ";" & Round(MaxACGaindB, 1), False, colobjects, propDetails, Me)
 End Sub

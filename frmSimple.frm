@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
 Begin VB.Form frmSimple 
    Caption         =   "Custom User Interface"
    ClientHeight    =   4950
@@ -98,6 +98,7 @@ Private Sub cmdStart_Click()
     Status = "Loading Lot Information for LOT " & txtLotNumber.Text
     cmdStart.Enabled = False
     Call LotINFO.LoadLotInfo(txtLotNumber.Text)
+    LotINFO.TestSetup = "c:\a.mds"
     Call LoadTestSetup(LotINFO.TestSetup)
     'BarDriver.AutomationEvents.TotalBars = LotINFO.LotSize
     'BarDriver.AutomationEvents.MoveToNthBar (LotINFO.FirstBar)

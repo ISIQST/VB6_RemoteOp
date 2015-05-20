@@ -24,6 +24,15 @@ Private Const SWP_SHOWWINDOW = &H40
 Private Const SWP_NOACTIVATE = &H10
 Public EndTest As Boolean
 Public objFrmSimple As New frmSimple
+Global gNetHostCallBack As Object
+
+Sub gShowForm(ByRef frPtr As Object)
+   If gNetHostCallBack Is Nothing Then
+      frPtr.Show
+   Else
+      Call gNetHostCallBack.ShowForm(frPtr)
+   End If
+End Sub
 
 Sub LoadTestSetup(TestProgramFile As String)
 
